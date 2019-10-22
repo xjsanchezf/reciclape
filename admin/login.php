@@ -1,11 +1,13 @@
 <? php 
 
+require '../config.php';
+
 if ( isset($_POST['admin_usuario'] && $_POST['admin_clave']) ) {
 
     $nombre = $_POST['admin_nombre'];
     $password = $_POST['admin_password'];
 
-    require './config.php';
+    
 
     $query = "SELECT * FROM `admin`";
 
