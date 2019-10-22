@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Sarabun", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0.03em;
+    background: white;
+}
+
+/* ---- HEADER ---- */
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: #f5f5f5;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+header .container {
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 176px;
+}
+
+.logo img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.opciones nav ul {
+    list-style: none;
+}
+
+.opciones nav ul li {
+    display: inline-block;
+    margin-left: 24px;
+}
+
+.opciones nav ul a {
+    width: 146px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+}
+
+/* ----- MENU LATERAL ---- */
+
+.menu-lateral {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 21%;
+    height: 100%;
+    background: #f5f5f5;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.15);
+}
+
+.menu-lateral .container{
+    margin-top: 80px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+.empresa {
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.empresa:hover {
+    background: #29AB87;
+}
+
+.empresa a {
+    text-decoration: none;
+    color: black;
+}
+.empresa a:hover {
+    color: white;
+}
+
+.contenido-empresa {
+    height: 112px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-empresa {
+    margin-right: 20px;
+    width: 48px;
+    height: 48px;
+}
+
+.datos-min-empresa {
+    height: 48px;
+}
+
+.datos-min-empresa h4 {
+    margin-bottom: 4px;
+}
+
+.datos-min-empresa h5 {
+    display: inline-block;
+}
+
+.logo-empresa img {
+    width: 100%;
+}
+
+.secciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: auto;
+}
+
+.secciones nav ul {
+    list-style: none;
+}
+
+.secciones nav ul li {
+    display: inline-block;
+    width: 100%;
+}
+
+.secciones nav ul li:hover {
+    background: #29AB87;
+}
+
+.secciones nav ul .ayuda {
+    padding-bottom: 0;
+}
+
+.icono {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.secciones nav ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 12px 24px;
+}
+
+.secciones nav ul .active a {
+    color: white;
+}
+
+.secciones nav ul li a:hover {
+    color: white;
+}
+
+/* ----- CONTENIDO DE SECCIÓN ---- */
+
+.contenido-seccion {
+    position: absolute;
+    width: 79%;
+    margin-top: 80px;
+    margin-left: 21%;
+}
+
+.contenido-seccion .container {
+    padding: 40px 72px 0 72px;
+    width: 100%;
+}
+
+.nombre-seccion {
+    font-weight: 500;
+    font-size: 56px;
+    margin-bottom: 40px;
+}
+
+/* ----- CONTENIDO CUENTA ----*/
+
+.datos-completo-empresa {
+    margin-bottom: 100px;
+}
+
+.datos-completo-empresa h2 {
+    margin-bottom: 24px;
+}
+
+.datos-completo-empresa .contenedor {
+    display: flex;
+}
+
+.datos-fijos {
+    margin-right: 60px;
+    flex: 0 1 auto;
+}
+
+.dato-empresa {
+    width: 350px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+    margin-bottom: 22px;
+}
+
+.dato-empresa h4 {
+    margin-bottom: 6px;
+}
+
+.datos-editables {
+    flex: 0 1 auto;
+}
+
+.datos-editables form {
+    width: 100%;
+}
+
+.contenedor-editables {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.dato-editable-empresa {
+    width: 350px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+    margin-bottom: 22px;
+    margin-right: 60px;
+    flex: 0 1 auto;
+}
+
+.dato-editable-empresa label {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.dato-editable-empresa label img {
+    float: right;
+}
+
+.dato-editable-empresa input {
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.enviar-editables {
+    width: 350px;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enviar-editables input[type="submit"] {
+    border: none;
+    font-size: 16px;
+    font-family: "Sarabun", sans-serif;
+    width: 256px;
+    height: 56px;
+}
+
+/* ----- CONTENIDO CATEGORÍAS ---- */
+
+.categorias {
+    margin-bottom: 48px;
+}
+
+.categorias h2 {
+    margin-bottom: 24px;
+    display: inline-block;
+}
+
+.categorias a {
+    width: 128px;
+    float: right;
+}
+
+.contenedor-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.category-item {
+    background: #f9f9f9;
+    width: 240px;
+    padding: 40px 24px 0 24px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.img-category-item {
+    margin: 0 auto;
+    width: 128px;
+}
+
+.img-category-item img {
+    width: 100%;
+    vertical-align: top;
+    margin-bottom: 24px;
+}
+
+.category-item h3 {
+    display: inline-block;
+    margin-bottom: 44px;
+}
+
+/* ----- COMPONENTES ---- */
+
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-style: normal;
+    border-radius: 10px;
+    padding: 8px 8px 10px 8px;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+}
+
+.primary {
+    background: #29AB87;
+    color: white;
+}
+
+.secondary {
+    background: transparent;
+    color: #29AB87;
+    border: 1.2px solid #29AB87;
+}
+
+.secondary:hover {
+    color: white;
+    background: #29AB87;
+}
+
+.active {
+    background: #29AB87;
+    border-bottom: none;
+}
+
+.active a {
+    color: white;
+}

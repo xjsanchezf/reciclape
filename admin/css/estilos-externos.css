@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Sarabun", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0.03em;
+    background: #29AB87;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---- LOGIN ---- */
+
+.login, .registro {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-form {
+    width: 75%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    border-radius: 10px;
+    background: #F5F5F5;
+}
+
+.container-form .logo {
+    margin: 40px 0;
+}
+
+.container .logo img {
+    width: 100%;
+}
+
+.container-form form .input-text[name="contraseña-log"] {
+    margin-bottom: 8px;
+}
+
+.container-form form a {
+    width: 100%;
+    display: inline-block;
+    font-size: 13px;
+    text-align: right;
+    text-decoration: none;
+    color: #29AB87;
+    margin-bottom: 16px;
+}
+
+.container-form form .btn-primary {
+    margin-bottom: 24px;
+}
+
+.sign-up {
+    width: 100%;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.sign-up p {
+    color: #F5F5F5;
+    display: inline-block;
+}
+
+.sign-up a {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ---- REGISTRO ----*/
+
+.container-form form .enlace-form-term {
+        display: inline-block;
+        width: auto;
+        text-align: left;
+        text-decoration: none;
+        color: #29AB87;
+        margin-bottom: 16px;
+}
+
+.checkbox {
+    display: inline-block;
+    font-size: 13px;
+}
+
+/* ---- FOOTER ---- */
+
+footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.container-footer {
+    text-align: center;
+    color: #F5F5F5;
+    opacity: 0.5;
+    margin: 24px auto;
+}
+
+.container-footer a {
+    display: inline-block;
+    color: #F5F5F5;
+    text-decoration: none;
+}
+
+.container-footer p {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.container-form a:hover, .sign-up a:hover, .container-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ----- COMPONENTES ---- */
+
+.btn-primary {
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    background: #29AB87;
+    padding: 20px 0;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+}
+
+input {
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    background: transparent;
+}
+
+.input-text {
+    border: 1.2px solid #BDBDBD;
+    padding: 20px 0 20px 16px;
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
+}
+
+.input-checkbox{
+    margin-right: 5px;
+    width: auto;
+}
+
+.input-text:focus {
+    border: 1.2px solid #29AB87;
+}
+

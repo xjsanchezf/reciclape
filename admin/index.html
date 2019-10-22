@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recicla.PE</title>
+    <link href="https://fonts.googleapis.com/css?family=Sarabun:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos-externos.css">
+</head>
+<body>
+    <div class="container">
+        <section class="login">
+            <div class="container-form">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Logo">
+                    <p>Administrador</p>
+                </div>
+
+                <!-- Formulario de inicio de sesión -->
+                <form action="php/admin_login.php" method="POST">
+
+                    <input class="input-text" type="text" placeholder="Usuario" name="admin_nombre" required>
+                    <input class="input-text" type="password" placeholder="Contraseña" name="admin_password" required>
+
+                    <input class="btn-primary" type="submit" value="ingresar">
+                </form>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="container-footer">
+                <a href="#">Política de privacidad</a>
+                <p>|</p>
+                <a href="#">Términos y condiciones de uso</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

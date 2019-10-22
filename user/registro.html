@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recicla.PE</title>
+    <link href="https://fonts.googleapis.com/css?family=Sarabun:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos-externos.css">
+</head>
+<body>
+    <div class="container">
+        <section class="registro">
+            <div class="container-form">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Logo">
+                </div>
+
+                <!-- Formulario de registro -->
+                <form id="empres" method="POST" action="registro.php">
+                    
+                    <input class="input-text" type="text" maxlength="11" placeholder="Número RUC" name="ruc-reg" required>
+                    <input class="input-text" type="email" placeholder="Email" name="correo-reg" required>
+                    <input class="input-text" type="password" placeholder="Contraseña" name="contrasena-reg" required>
+
+                    <label class="checkbox"> 
+                        <input class="input-checkbox" type="checkbox" name="acepto-term" required>He leído y acepto los
+                    </label>
+
+                    <a class="enlace-form-term" href="#">Términos y Condiciones de uso</a>
+
+                    <input class="btn-primary" type="submit" value="registrar">
+                </form>
+
+            </div>
+            <div class="sign-up">
+                <p>¿Ya tienes una cuenta?</p>
+                <a href="login.html">Iniciar Sesión.</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container-footer">
+                <a href="#">Política de privacidad</a>
+                <p>|</p>
+                <a href="#">Términos y condiciones de uso</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
