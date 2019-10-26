@@ -345,6 +345,66 @@ h5 {
     margin-bottom: 44px;
 }
 
+/* ----- ADMIN MODIFICAR ITEMS -----*/
+
+.listado-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.boton-crear-item {
+    margin-bottom: 15px;
+}
+
+.boton-crear-item a {
+    width: 100px;
+}
+
+.filtros-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mostrar-entradas select {
+    width: 70px;
+    padding: 5px 0 ;
+}
+
+.mostrar-entradas p {
+    display: inline-block;
+}
+
+.buscador-items input {
+    padding: 5px 4px;
+}
+
+.tabla-items {
+    margin-top: 15px;
+}
+
+.tabla-items table {
+    width: 100%;
+}
+
+.tabla-items table, .tabla-items th , .tabla-items td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.tabla-items th, .tabla-items td {
+    padding: 5px 0 5px 8px;
+    text-align: left;
+}
+
+.tabla-items td {
+    vertical-align: top;
+}
+
+.tabla-items td a {
+    width: 100px;
+}
+
 /* ----- COMPONENTES ---- */
 
 
