@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recicla.PE</title>
+    <link href="https://fonts.googleapis.com/css?family=Sarabun:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos-internos.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="Logo"></a>
+            </div>
+            <div class="opciones">
+                <nav>
+                    <ul>
+                        <li><a class="btn primary" href="login.html">salir</a></li>
+                    </ul>   
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="menu-lateral">
+        <div class="container">
+            <div class="empresa active">
+                <a href="#">
+                    <div class="contenido-empresa">
+                        <div class="logo-empresa">
+                            <img src="img/Ellipse2.png" alt="Logo de empresa">
+                        </div>
+                        <div class="datos-min-empresa">
+                            <h4>Pacheco Hnos</h4>
+                            <h5>RUC</h5>
+                            <h5>20406080252</h5>
+                        </div>
+                    </div>
+                </a>   
+            </div>
+            <div class="secciones">
+                <div class="principales">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Empresas
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="home-categorias.html">
+                                    <div class="icono">
+                                        <img src="img/danger-active.png" alt="Icono de seccion">
+                                    </div>
+                                    Items
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Pedidos
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="secundarias">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Configuración
+                                </a>
+                            </li>
+                            <li class="ayuda">
+                                <a href="#">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Ayuda
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contenido-seccion">
+        <div class="container">
+            <h1 class="nombre-seccion">Item</h1>
+            <div class="datos-item">
+                <div class="dato">
+                    <label for="nombre-item">Nombre</label>
+                    <input type="text" name="nombre-item" id="nombre-item" value="Nombre">
+                </div>
+                <div class="dato">
+                    <label for="descripcion-item">Descripción</label>
+                    <input type="text" name="descripcion-item" id="descripcion-item" value="Descripcion">
+                </div>
+                <div class="dato">
+                    <label for="precio-item">Precio (S/.)</label>
+                    <input type="text" name="precio-item" id="precio-item" value="0.00">
+                </div>
+                <div class="dato">
+                    <label for="categoria-item">Categoría</label>
+                    <input type="text" name="categoria-item" id="categoria-item" value="Nombre">
+                </div>
+                <a href="#" class="btn primary">Guardar</a>
+                <a href="#" class="btn secondary">Cancelar</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

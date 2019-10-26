@@ -405,6 +405,24 @@ h5 {
     width: 100px;
 }
 
+/*----- MODIFICAR ITEM -----*/
+
+.datos-item .dato {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.datos-item .dato label {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.datos-item .dato input {
+    padding: 5px 0 5px 8px;
+}
+
+
 /* ----- COMPONENTES ---- */
 
 
