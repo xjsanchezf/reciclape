@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="css/estilos-internos.css">
 </head>
 <body>
+<?php 
+    require 'config.php';
+    $consulta_categorias = "SELECT id,nombre,descripcion FROM categorias ORDER BY nombre";
+    $consulta_items = "SELECT i.id, i.nombre, i.descripcion, i.icono, c.id, i.precio 
+        FROM item AS i
+        INNER JOIN categorias AS c ON i.categoria = c.id
+        ORDER BY nombre";   
+    ?>
     <header>
         <div class="container">
             <div class="logo">
@@ -96,25 +104,50 @@
             </div>
         </div>
     </section>
+
     <section class="contenido-seccion">
         <div class="container">
             <h1 class="nombre-seccion">Categorías</h1>
-            <div class="categorias">
+
+            <!-- div class="categorias">
                 <h2>Plásticos</h2>
                 <a href="#" class="btn secondary">más items</a>
                 <div class="contenedor-items">
-
-                    <!-- -->
                     <div class="category-item">
                         <div class="img-category-item">
                             <img src="img/category-item.png" alt="Imagen de sub-categoría">
                         </div>
                         <h3>Category Item</h3>
                     </div>
-                    <!-- -->
-                    
                 </div>
-            </div>
+            </div -->
+
+            <?php 
+            if ( $resultado_categorias = $mysqli->query($consulta_categorias) ) {
+                while ( $categoria = $resultado_categorias->fetch_row() ) {
+                    echo '<div class="categorias">
+                            <h2>'.$categoria[1].'</h2>
+                            <a href="#" class="btn secondary">Más items</a>
+                            <div class="contenedor-items">';
+
+                            if ( $resultado_items = $mysqli->query($consulta_items)) {
+                                while ( $item = $resultado_items->fetch_row() /*&& $item[4] == $categoria[0]*/) {
+                                    if ( $item[4] == $categoria[0] ) {
+                                        echo '<div class="category-item">
+                                            <div class="img-category-item">
+                                                <img src="img/category-item.png" alt="Imagen de sub-categoría">
+                                            </div>
+                                            <h3>'.$item[1].'</h3>
+                                          </div>';
+                                    } 
+                                }
+                            };
+                                
+                            echo '</div>
+                        </div>';
+                }
+            }
+            ?>
         </div>
     </section>
 </body>
