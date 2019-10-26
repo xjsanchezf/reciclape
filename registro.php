@@ -9,7 +9,7 @@ if (isset($_POST['ruc-reg'])) {
     require 'config.php';
 
     // Realizar una consulta SQL
-    $sql = "INSERT INTO empresa (ruc_e,correo_e,password_e) VALUES ('".$ruc_empresa."','".$correo_empresa."','".$contrasena_empresa."')";
+    $sql = "INSERT INTO usuario (ruc,correo,password) VALUES ('".$ruc_empresa."','".$correo_empresa."','".$contrasena_empresa."')";
 
     $resultado = $mysqli->query($sql);
 

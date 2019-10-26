@@ -16,21 +16,21 @@
             </div>
             <div class="opciones">
                 <nav>
-                    <ul>
+                    <ul>|
+                        <li><a class="btn secondary" href="#">recoger (1.3 T)</a></li>
                         <li><a class="btn primary" href="login.html">salir</a></li>
                     </ul>   
                 </nav>
             </div>
         </div>
     </header>
-
     <section class="menu-lateral">
         <div class="container">
-            <div class="empresa active">
-                <a href="#">
+            <div class="empresa">
+                <a href="home-cuenta.html">
                     <div class="contenido-empresa">
                         <div class="logo-empresa">
-                            <img src="img/Ellipse2.png" alt="Logo de empresa">
+                            <img src="img/Ellipse.png" alt="Logo de empresa">
                         </div>
                         <div class="datos-min-empresa">
                             <h4>Pacheco Hnos</h4>
@@ -49,15 +49,15 @@
                                     <div class="icono">
                                         <img src="img/danger.png" alt="Icono de seccion">
                                     </div>
-                                    Empresas
+                                    Resumen
                                 </a>
                             </li>
                             <li class="active">
-                                <a href="home-categorias.html">
+                                <a href="#">
                                     <div class="icono">
                                         <img src="img/danger-active.png" alt="Icono de seccion">
                                     </div>
-                                    Items
+                                    Categorías
                                 </a>
                             </li>
                             <li>
@@ -96,56 +96,25 @@
             </div>
         </div>
     </section>
-
     <section class="contenido-seccion">
         <div class="container">
-            <h1 class="nombre-seccion">Listado de Items</h1>
-            <div class="listado-items">
-                <div class="boton-crear-item">
-                    <a href="#" class="btn primary">Nuevo</a>
-                </div>
+            <h1 class="nombre-seccion">Categorías</h1>
+            <div class="categorias">
+                <h2>Plásticos</h2>
+                <a href="#" class="btn secondary">más items</a>
+                <div class="contenedor-items">
 
-                <div class="filtros-items">
-                    <div class="mostrar-entradas">
-                        <label for="numero-entradas">Mostrar</label>
-                        <select name="numero-entradas" id="numero-entradas">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                        <p>Entradas</p>
+                    <!-- -->
+                    <div class="category-item">
+                        <div class="img-category-item">
+                            <img src="img/category-item.png" alt="Imagen de sub-categoría">
+                        </div>
+                        <h3>Category Item</h3>
                     </div>
-
-                    <div class="buscador-items">
-                        <label for="buscador">Buscar:</label>
-                        <input type="text" name="buscador" id="buscador">
-                    </div>
+                    <!-- -->
+                    
                 </div>
-
-                <div class="tabla-items">
-                    <table>
-                        <tr>
-                            <th class="cabecera-tabla">#</th>
-                            <th class="cabecera-tabla">Nombre</th>
-                            <th class="cabecera-tabla">Descripción</th>
-                            <th class="cabecera-tabla">Precio</th>
-                            <th class="cabecera-tabla">Categoría</th>
-                            <th class="cabecera-tabla">Acciones</th>
-                        </tr>
-                        <tr>
-                            <td class="info-item">1</td>
-                            <td class="info-item">Nombre</td>
-                            <td class="info-item">Descripción</td>
-                            <td class="info-item">S/. 0.00</td>
-                            <td class="info-item">Categoría</td>
-                            <td class="info-item">
-                                <a href="#" class="btn primary">Editar</a>
-                                <a href="#" class="btn primary">Eliminar</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>  
+            </div>
         </div>
     </section>
 </body>

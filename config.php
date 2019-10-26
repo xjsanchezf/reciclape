@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli('localhost', 'root', '', 'reciclape');
+$mysqli = new mysqli('localhost:3307', 'root', '', 'reciclape');
 
 if ($mysqli->connect_errno) {
 

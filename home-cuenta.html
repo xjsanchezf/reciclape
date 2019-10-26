@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recicla.PE</title>
+    <link href="https://fonts.googleapis.com/css?family=Sarabun:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos-internos.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="Logo"></a>
+            </div>
+            <div class="opciones">
+                <nav>
+                    <ul>
+                        <li><a class="btn secondary" href="#">recoger (1.3 T)</a></li>
+                        <li><a class="btn primary" href="login.html">salir</a></li>
+                    </ul>   
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="menu-lateral">
+        <div class="container">
+            <div class="empresa active">
+                <a href="#">
+                    <div class="contenido-empresa">
+                        <div class="logo-empresa">
+                            <img src="img/Ellipse2.png" alt="Logo de empresa">
+                        </div>
+                        <div class="datos-min-empresa">
+                            <h4>Pacheco Hnos</h4>
+                            <h5>RUC</h5>
+                            <h5>20406080252</h5>
+                        </div>
+                    </div>
+                </a>   
+            </div>
+            <div class="secciones">
+                <div class="principales">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Resumen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="home-categorias.html">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Categorías
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Pedidos
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="secundarias">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Configuración
+                                </a>
+                            </li>
+                            <li class="ayuda">
+                                <a href="#">
+                                    <div class="icono">
+                                        <img src="img/danger.png" alt="Icono de seccion">
+                                    </div>
+                                    Ayuda
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contenido-seccion">
+        <div class="container">
+            <h1 class="nombre-seccion">Cuenta</h1>
+            <div class="datos-completo-empresa">
+                <h2>Datos de la empresa</h2>
+                <div class="contenedor">
+                    <div class="datos-fijos">
+                        <div class="dato-empresa">
+                            <h4>RUC</h4>
+                            <p>20406080252</p>
+                        </div>
+                        <div class="dato-empresa">
+                            <h4>Dirección</h4>
+                            <p>Av. Avenida 312, Distrito</p>
+                        </div>
+                    </div>
+
+                    <!-- Modificar Datos -->
+                    <div class="datos-editables">
+                        <form action="modificar-datos.php" method="POST">
+                            <div class="contenedor-editables">
+                                <div class="dato-editable-empresa">
+                                    <label for="rs-empresa">Razón Social<img src="img/editable.png" alt="Editable"></label>
+                                    <input type="text" value="Pacheco Hnos" id="rs-empresa" name="rs-empresa" required>
+                                </div>
+                                <div class="dato-editable-empresa">
+                                    <label for="tel-empresa">Teléfono<img src="img/editable.png" alt="Editable"></label>
+                                    <input type="tel" value="4239000" id="tel-empresa" name="tel-empresa" required>
+                                </div>
+                                <div class="dato-editable-empresa">
+                                    <label for="email-empresa">E-mail<img src="img/editable.png" alt="Editable"></label>
+                                    <input type="email" value="pachechohnos@mail.com" id="email-empresa" name="email-empresa" required>
+                                </div>
+                                <div class="enviar-editables">
+                                    <input type="submit" class="btn primary" value="cambiar datos" name="cambiar-datos">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- -->
+
+                </div>
+            </div>
+            <div class="datos-completo-empresa">
+                <h2>Cambiar contraseña</h2>
+                <div class="datos-editables">
+                    <form action="change-password.php" method="POST">
+                        <div class="contenedor-editables">
+                            <div class="dato-editable-empresa">
+                                <label for="pw-old">Contraseña antigua<img src="img/editable.png" alt="Editable"></label>
+                                <input type="password" id="pw-old" name="pw-old" required>
+                            </div>
+                            <div class="dato-editable-empresa">
+                                <label for="pw-new">Nueva contraseña<img src="img/editable.png" alt="Editable"></label>
+                                <input type="password" id="pw-new" name="pw-new" required>
+                            </div>
+                            <div class="dato-editable-empresa">
+                                <label for="pw-new-repeat">Repetir nueva contraseña<img src="img/editable.png" alt="Editable"></label>
+                                <input type="password" id="pw-new-repeat" name="pw-new-repeat" required>
+                            </div>
+                            <div class="enviar-editables">
+                                <input type="submit" class="btn primary" value="cambiar contraseña" name="cambiar-contraseña">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+</html>
