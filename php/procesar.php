@@ -20,6 +20,23 @@ if (isset($_POST['procesar'])) {
     };
 
     //
+    //-- Editar una categoría --
+    //
+
+    //
+    //-- Borrar una categoría --
+    //
+    if ($_POST['procesar'] == 'categ-borrar') {
+        $id_categ = $_POST['id-categ'];
+
+        $categoria = "DELETE FROM categoria WHERE CategoriaID = '".$id_categ."'";
+        $borrar = $mysqli->query($categoria);
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../categoria_listado.php">';
+    };
+
+    //
     //-- Crear nuevo producto --
     //
     if ($_POST['procesar'] == 'prod-crear') {

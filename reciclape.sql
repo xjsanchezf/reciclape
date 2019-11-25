@@ -17,16 +17,16 @@ CREATE TABLE `Usuario` (
 
 	PRIMARY KEY (`UsuarioID`)
 )
-COLLATE='latin1_swedish_ci' ENGINE=InnoDB AUTO_INCREMENT=2;
+ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- 
 -- Insertando datos a la tabla `Usuario` 
 -- 
 
 INSERT INTO `Usuario` (`UsuarioID`, `UsuarioCorreo`, `UsuarioPassword`, `UsuarioNombres`, `UsuarioApellidos`, `UsuarioDireccion`, `UsuarioTelefono`) VALUES 
-	(1, 'luis.carlos1999h@gmail.com', 'abc123def', 'Luis', 'Huamani', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 965126613),
-    (2, 'jlqs97@gmail.com', 'abc123def', 'Giorgio', 'Eme', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 957212662),
-    (3, 'xjsanchezf@gmail.com', 'abc123def', 'Xiomara', 'Sanchez', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 992137315);
+	(1, 'luis.carlos1999h@gmail.com', 'abc123def', 'Luis', 'Huamaní', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 965126613),
+    (2, 'jlqs97@gmail.com', 'abc123def', 'Giorgio', 'Emé', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 957212662),
+    (3, 'xjsanchezf@gmail.com', 'abc123def', 'Xiomara', 'Sánchez', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 992137315);
 
 -- 
 -- Definiendo la tabla `Empresa` 
@@ -41,7 +41,8 @@ CREATE TABLE `Empresa` (
     `EmpresaTelefono` VARCHAR(20) NULL DEFAULT NULL,
 
     PRIMARY KEY (`EmpresaID`)
-);
+)
+DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `Empresa` (`EmpresaID`, `EmpresaRUC`, `EmpresaRazSoc`, `EmpresaCorreo`, `EmpresaDireccion`, `EmpresaTelefono`) VALUES 
     (1, '20601106940', 'Reciclando Perú', 'contacto@reciclandoperu.com', 'Manzana F Lote 20 Grupo 4, Cruz de Motupe, San Juan de Lurigancho', '970713494'),
@@ -59,7 +60,7 @@ CREATE TABLE `Categoria` (
 
 	PRIMARY KEY (`CategoriaID`)
 )
-COLLATE='latin1_swedish_ci' ENGINE=InnoDB;
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 
 -- Insertando datos a la tabla `Categoria` 
@@ -93,7 +94,7 @@ CREATE TABLE `Producto` (
 	KEY `FK_Item_CategoriaID` (`ProductoCategoria`),
 	CONSTRAINT `FK_Item_CategoriaID` FOREIGN KEY (`ProductoCategoria`) REFERENCES `Categoria` (`CategoriaID`)
 ) 
-COLLATE='latin1_swedish_ci' ENGINE=InnoDB;
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Insertando datos a la tabla `Producto`
@@ -115,7 +116,8 @@ CREATE TABLE `DetallePedido` (
 
 	KEY `FK_DetallePedido_ProductoID` (`DetalleProducto`),
 	CONSTRAINT `FK_DetallePedido_ProductoID` FOREIGN KEY (`DetalleProducto`) REFERENCES `Producto` (`ProductoID`)
-);
+)
+DEFAULT CHARSET=utf8mb4;
 
 --
 -- Insertando datos a la tabla `DetallePedido` 
@@ -142,7 +144,8 @@ CREATE TABLE `Pedido` (
 
     KEY `FK_Pedido_EmpresaID` (`PedidoEmpresa`),
     CONSTRAINT `FK_Pedido_EmpresaID` FOREIGN KEY (`PedidoEmpresa`) REFERENCES `Empresa` (`EmpresaID`)
-);
+)
+DEFAULT CHARSET=utf8mb4;
 
 -- 
 -- Definiendo la tabla `Admin` 
@@ -155,7 +158,7 @@ CREATE TABLE `Admin` (
 
 	PRIMARY KEY (`AdminID`)
 )
-COLLATE='latin1_swedish_ci' ENGINE=InnoDB AUTO_INCREMENT=2;
+ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- 
 -- Insertando datos a la tabla `Admin` 
