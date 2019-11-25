@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Añadir nueva empresa | Módulo Admin Recicla.PE</title>
+    <link rel="icon" href="img/favicon.ico">
+
+    <!-- CSS Foundation -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/freeform.css">
+
+    <!-- Metadata Regular -->
+    <meta name="title" content="Recicla.PE">
+    <meta name="description" content="Deshazte de lo que ya no necesites, ayuda al planeta haciéndolo.">
+    <meta name="keywords" content="recicla, reciclaje, delivery, domicilio, recicladora, app">
+    <meta name="author" content="Luís Huamaní, Giorgio Emé, Xiomara Sánchez">
+    <meta name="copyright" content="© 2019 ReciclaPE. Todos los derechos reservados.">
+    <!-- Metadata Facebook -->
+    <meta property="og:title" content="Recicla.PE">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/metadata_facebook.jpg">
+    <meta property="og:url" content="http://www.recicla.pe">
+    <meta property="og:description" content="Deshazte de lo que ya no necesites, ayuda al planeta haciéndolo.">
+    <meta property="og:site_name" content="Recicla.PE">
+    <!-- Metadata Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="http://www.recicla.pe">
+    <meta property="twitter:title" content="Recicla.PE">
+    <meta property="twitter:description" content="Deshazte de lo que ya no necesites, ayuda al planeta haciéndolo.">
+    <meta property="twitter:image" content="img/metadata_twitter.jpg">
+</head>
+
+<body>
+
+    <main class="wrapper">
+        <div class="row">
+            <div class="col">
+                <div class="heading">
+                    <p class="text-title">Añadir una nueva empresa</p>
+                    <p class="text-subtitle">Agrega una nueva empresa aliada de Recicla.PE</p>
+                </div>
+            
+                <form action="php/procesar.php" method="POST" class="form">
+                    <label for="empresa-ruc">RUC</label>
+                    <input type="number" name="empresa-ruc" required>
+
+                    <label for="empresa-nombre">Razón social</label>
+                    <input type="text" name="empresa-nombre" required>
+
+                    <label for="empresa-direccion">Dirección</label>
+                    <input type="text" name="empresa-direccion" required>
+
+                    <label for="empresa-telefono">Teléfono</label>
+                    <input type="number" name="empresa-telefono" placeholder="Ej. 4249827">
+            
+                    <label for="empresa-correo">Correo</label>
+                    <input type="email" name="empresa-correo">
+            
+                    <input type="hidden" name="procesar" value="empresa-crear">
+            
+                    <input type="submit" class="button" value="Añadir nueva empresa">
+                </form>
+            </div>
+
+            <div class="col">
+                <div class="img img-empresa"></div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
