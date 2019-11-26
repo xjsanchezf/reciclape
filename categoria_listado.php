@@ -9,8 +9,9 @@
     <link rel="icon" href="img/favicon.ico">
 
     <!-- CSS Foundation -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/fluido.css">
+    <link rel="stylesheet" href="css/bootstrap_fluid.css">
 
     <!-- Metadata Regular -->
     <meta name="title" content="Recicla.PE">
@@ -34,53 +35,56 @@
 </head>
 <body>
 
-<main>
-    <div class="heading">
-        <p class="text-title">Categorías</p>
-        <p class="text-subtitle">Crea, edita o elimina categorías en Recicla.PE</p>
-
-        <a href="categoria_crear.html" class="button" title="Crear nueva categoría">Crear nueva categoría</a>
-    </div>
-    <div class="table">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Categoría</th>
-                    <th>Descripción</span></th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                require 'php/config.php';
-                $categorias = "SELECT CategoriaID,CategoriaNombre,CategoriaDesc FROM categoria";
-                if ($resultado = $mysqli->query($categorias)) {
-                    while ($categ = $resultado->fetch_row()) {
-                        echo '<tr>
-                                <th>'.$categ[0].'</th>
-                                <th>'.$categ[1].'</th>
-                                <th>'.$categ[2].'</th>
-                                <th class="flex">
-                                    <form action="php/procesar.php" method="POST">
-                                        <input type="submit" name="editar-categ" class="button" value="Editar">
-                                        <input type="hidden" name="procesar" value="categ-editar">
-                                        <input type="hidden" name="id-categ" value="'.$categ[0].'">
-                                    </form>
-                                    <form action="php/procesar.php" method="POST">
-                                        <input type="submit" name="borrar-categ" class="button btn-danger" value="Eliminar">
-                                        <input type="hidden" name="procesar" value="categ-borrar">
-                                        <input type="hidden" name="id-categ" value="'.$categ[0].'">
-                                    </form>
-                                </th>
-                              </tr>';
-                    };
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
-</main>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <p class="text-title">Categorías</p>
+                <p class="text-subtitle">Crea, edita o elimina categorías en Recicla.PE</p>
+            </div>
+        </div>
+        <div class="row">
+            <a href="categoria_crear.html" class="button" title="Crear nueva categoría">Crear nueva categoría</a>
+        </div>
+        <div class="table">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Descripción</span></th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    require 'php/config.php';
+                    $categorias = "SELECT CategoriaID,CategoriaNombre,CategoriaDesc FROM categoria";
+                    if ($resultado = $mysqli->query($categorias)) {
+                        while ($categ = $resultado->fetch_row()) {
+                            echo '<tr>
+                                    <th scope="row">'.$categ[0].'</th>
+                                    <th>'.$categ[1].'</th>
+                                    <th>'.$categ[2].'</th>
+                                    <th class="acciones">
+                                        <form action="php/procesar.php" method="POST">
+                                            <input type="submit" name="editar-categ" class="button btn-accion" value="Editar">
+                                            <input type="hidden" name="procesar" value="categ-editar">
+                                            <input type="hidden" name="id-categ" value="'.$categ[0].'">
+                                        </form>
+                                        <form action="php/procesar.php" method="POST">
+                                            <input type="submit" name="borrar-categ" class="button btn-danger btn-accion" value="Eliminar">
+                                            <input type="hidden" name="procesar" value="categ-borrar">
+                                            <input type="hidden" name="id-categ" value="'.$categ[0].'">
+                                        </form>
+                                    </th>
+                                </tr>';
+                        };
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </main>
     
 </body>
 </html>

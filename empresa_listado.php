@@ -9,8 +9,9 @@
     <link rel="icon" href="img/favicon.ico">
 
     <!-- CSS Foundation -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/fluido.css">
+    <link rel="stylesheet" href="css/bootstrap_fluid.css">
 
     <!-- Metadata Regular -->
     <meta name="title" content="Recicla.PE">
@@ -34,7 +35,7 @@
 </head>
 <body>
 
-<main>
+<main class="container-fluid">
     <div class="heading">
         <p class="text-title">Empresas recicladoras</p>
         <p class="text-subtitle">Crea, edita o elimina empresas recicladoras que operan en Recicla.PE</p>

@@ -1,0 +1,8 @@
+.acciones {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-accion {
+    width: 10em;
+}
