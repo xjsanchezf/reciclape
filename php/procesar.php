@@ -22,6 +22,40 @@ if (isset($_POST['procesar'])) {
     //
     //-- Editar una categoría --
     //
+    // Pase de ID
+    if ($_POST['procesar'] == 'categ-editar') {
+        $id_categ = $_POST['id-categ'];
+        
+        $categoria = "SELECT CategoriaID,CategoriaNombre,CategoriaDesc FROM categoria WHERE CategoriaID = '".$id_categ."' ";
+        $resultado = $mysqli->query($categoria);
+        $categ = $resultado->fetch_row();
+
+        session_name('categ-editar');
+        session_start();
+
+        session_unset($_SESSION['categ_id']);
+        session_unset($_SESSION['categ_nombre']);
+        session_unset($_SESSION['categ_desc']);
+
+        $_SESSION['categ_id'] = $categ[0];
+        $_SESSION['categ_nombre'] = $categ[1];
+        $_SESSION['categ_desc'] = $categ[2];
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../categoria_editar.php">';
+    };
+    // Cambio de datos
+    if ($_POST['procesar'] == 'categ-editar-2') {
+        $categ_id = $_POST['categ-id'];
+        $categ_nombre = $_POST['categ-nombre'];
+        $categ_desc = $_POST['categ-desc'];
+
+        $categoria = sprintf("UPDATE categoria SET CategoriaNombre = '%s', CategoriaDesc = '%s' WHERE CategoriaID = '%s'", $categ_nombre, $categ_desc, $categ_id);
+        $editar = $mysqli->query($categoria);
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../categoria_listado.php">';
+    };
 
     //
     //-- Borrar una categoría --
