@@ -35,55 +35,56 @@
 </head>
 <body>
 
-<main class="container-fluid">
-    <div class="heading">
-        <p class="text-title">Empresas recicladoras</p>
-        <p class="text-subtitle">Crea, edita o elimina empresas recicladoras que operan en Recicla.PE</p>
-
-        <a href="empresa_crear.html" class="button" title="Añade una empresa nueva">Añade una empresa nueva</a>
-    </div>
-    <div class="table">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>RUC</th>
-                    <th>Recicladora</span></th>
-                    <th>Dirección</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                require 'php/config.php';
-                $empresas = "SELECT EmpresaID,EmpresaRUC,EmpresaRazSoc,EmpresaDireccion FROM empresa";
-                if ($resultado = $mysqli->query($empresas)) {
-                    while ($empresa = $resultado->fetch_row()) {
-                        echo '<tr>
-                                <th>'.$empresa[0].'</th>
-                                <th>'.$empresa[1].'</th>
-                                <th>'.$empresa[2].'</th>
-                                <th>'.$empresa[3].'</th>
-                                <th class="flex">
-                                    <form action="php/procesar.php" method="POST">
-                                        <input type="submit" name="editar-empresa" class="button" value="Editar">
-                                        <input type="hidden" name="procesar" value="editar-empresa">
-                                        <input type="hidden" name="id-empresa" value="'.$empresa[0].'">
-                                    </form>
-                                    <form action="php/procesar.php" method="POST">
-                                        <input type="submit" name="borrar-empresa" class="button btn-danger" value="Eliminar">
-                                        <input type="hidden" name="procesar" value="borrar-empresa">
-                                        <input type="hidden" name="id-empresa" value="'.$empresa[0].'">
-                                    </form>
-                                </th>
-                              </tr>';
-                    };
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
-</main>
+    <main class="container-fluid">
+        <div class="row-fluid">
+            <p class="text-title">Empresas recicladoras</p>
+            <p class="text-subtitle">Crea, edita o elimina empresas recicladoras que operan en Recicla.PE</p>
+        </div>
+        <div class="row">
+            <a href="empresa_crear.html" class="button" title="Añade una empresa nueva">Añade una empresa nueva</a>
+        </div>
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">RUC</th>
+                        <th scope="col">Recicladora</span></th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    require 'php/config.php';
+                    $empresas = "SELECT EmpresaID,EmpresaRUC,EmpresaRazSoc,EmpresaDireccion FROM empresa";
+                    if ($resultado = $mysqli->query($empresas)) {
+                        while ($empresa = $resultado->fetch_row()) {
+                            echo '<tr>
+                                    <th scope="row">'.$empresa[0].'</th>
+                                    <th>'.$empresa[1].'</th>
+                                    <th>'.$empresa[2].'</th>
+                                    <th>'.$empresa[3].'</th>
+                                    <th class="flex">
+                                        <form action="php/procesar.php" method="POST">
+                                            <input type="submit" name="editar-empresa" class="button" value="Editar">
+                                            <input type="hidden" name="procesar" value="editar-empresa">
+                                            <input type="hidden" name="id-empresa" value="'.$empresa[0].'">
+                                        </form>
+                                        <form action="php/procesar.php" method="POST">
+                                            <input type="submit" name="borrar-empresa" class="button btn-danger" value="Eliminar">
+                                            <input type="hidden" name="procesar" value="borrar-empresa">
+                                            <input type="hidden" name="id-empresa" value="'.$empresa[0].'">
+                                        </form>
+                                    </th>
+                                </tr>';
+                        };
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </main>
     
 </body>
 </html>

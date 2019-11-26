@@ -36,16 +36,14 @@
 <body>
 
     <main class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <p class="text-title">Categorías</p>
-                <p class="text-subtitle">Crea, edita o elimina categorías en Recicla.PE</p>
-            </div>
+        <div class="row-fluid">
+            <p class="text-title">Categorías</p>
+            <p class="text-subtitle">Crea, edita o elimina categorías en Recicla.PE</p>
         </div>
         <div class="row">
             <a href="categoria_crear.html" class="button" title="Crear nueva categoría">Crear nueva categoría</a>
         </div>
-        <div class="table">
+        <div class="row">
             <table class="table table-hover">
                 <thead>
                     <tr>

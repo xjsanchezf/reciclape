@@ -51,6 +51,12 @@ input:focus {
     box-shadow: 0px 3px 15px var(--shadow-color);
     padding: 8px 12px;
 }
+.button:hover {
+    color: var(--negative-color);
+    text-decoration: none;
+    background-color: #319177;
+}
+
 .btn-danger {
     background-color: #FFFFFF;
     color: var(--danger-color);
