@@ -22,11 +22,11 @@ if (isset($_POST['procesar'])) {
     //
     //-- Editar una categoría --
     //
-    // Pase de ID
+    // ** Pase de ID **
     if ($_POST['procesar'] == 'categ-editar') {
         $id_categ = $_POST['id-categ'];
         
-        $categoria = "SELECT CategoriaID,CategoriaNombre,CategoriaDesc FROM categoria WHERE CategoriaID = '".$id_categ."' ";
+        $categoria = "SELECT * FROM categoria WHERE CategoriaID = '".$id_categ."' ";
         $resultado = $mysqli->query($categoria);
         $categ = $resultado->fetch_row();
 
@@ -44,7 +44,7 @@ if (isset($_POST['procesar'])) {
         $mysqli->close();
         echo '<meta http-equiv="refresh" content="0; url=../categoria_editar.php">';
     };
-    // Cambio de datos
+    // ** Cambio de datos **
     if ($_POST['procesar'] == 'categ-editar-2') {
         $categ_id = $_POST['categ-id'];
         $categ_nombre = $_POST['categ-nombre'];
@@ -70,6 +70,8 @@ if (isset($_POST['procesar'])) {
         echo '<meta http-equiv="refresh" content="0; url=../categoria_listado.php">';
     };
 
+
+
     //
     //-- Crear nuevo producto --
     //
@@ -84,8 +86,69 @@ if (isset($_POST['procesar'])) {
         $insertar = $mysqli->query($producto);
 
         $mysqli->close();
-        echo '<meta http-equiv="refresh" content="0; url=../producto_crear.php">';
+        echo '<meta http-equiv="refresh" content="0; url=../producto_listado.php">';
     };
+    //
+    //-- Borrar nuevo producto --
+    //
+    if ($_POST['procesar'] == 'prod-borrar') {
+        $id_producto = $_POST['id-producto'];
+
+        $producto = "DELETE FROM producto WHERE ProductoID = '".$id_producto."'";
+        $borrar = $mysqli->query($producto);
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../producto_listado.php">';
+    };
+    //
+    //-- Editar un producto --
+    //
+    // ** Pase de ID **
+    if ($_POST['procesar'] == 'prod-editar') {
+        $id_producto = $_POST['id-producto'];
+        
+        $productos = "SELECT * FROM producto WHERE ProductoID = '".$id_producto."' ";
+        $resultado = $mysqli->query($productos);
+        $prod = $resultado->fetch_row();
+
+        session_name('prod-editar');
+        session_start();
+
+        session_unset($_SESSION['prod_id']);
+        session_unset($_SESSION['prod_nombre']);
+        session_unset($_SESSION['prod_desc']);      
+        session_unset($_SESSION['prod_precio']);
+        session_unset($_SESSION['prod_imagen']);
+        session_unset($_SESSION['prod_categ']);
+        
+        $_SESSION['prod_id'] = $prod[0];
+        $_SESSION['prod_nombre'] = $prod[1];
+        $_SESSION['prod_desc'] = $prod[2];
+        $_SESSION['prod_precio'] = $prod[3];
+        $_SESSION['prod_imagen'] = $prod[4];
+        $_SESSION['prod_categ'] = $prod[5];
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../producto_editar.php">';
+    };
+    // ** Cambio de datos **
+    if ($_POST['procesar'] == 'empresa-editar-2') {
+        $empresa_id = $_POST['empresa-id'];
+        $empresa_ruc = $_POST['empresa-ruc'];
+        $empresa_nombre = $_POST['empresa-nombre'];
+        $empresa_correo = $_POST['empresa-correo'];
+        $empresa_direccion = $_POST['empresa-direccion'];
+        $empresa_telefono = $_POST['empresa-telefono'];
+
+        $empresa = "UPDATE empresa SET EmpresaRUC = '".$empresa_ruc."',EmpresaRazSoc = '".$empresa_nombre."',EmpresaCorreo = '".$empresa_correo."',EmpresaDireccion = '".$empresa_direccion."',EmpresaTelefono = '".$empresa_telefono."' WHERE EmpresaID = '".$empresa_id."' ";
+        $editar = $mysqli->query($empresa);
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../empresa_listado.php">';
+    };
+
+
+
 
     //
     //-- Añadir nueva empresa --
@@ -101,7 +164,65 @@ if (isset($_POST['procesar'])) {
         $insertar = $mysqli->query($empresa);
 
         $mysqli->close();
-        echo '<meta http-equiv="refresh" content="0; url=../empresa_crear.html">';
+        echo '<meta http-equiv="refresh" content="0; url=../empresa_listado.php">';
+    };
+    //
+    //-- Borrar una categoría --
+    //
+    if ($_POST['procesar'] == 'empresa-borrar') {
+        $id_empresa = $_POST['id-empresa'];
+
+        $empresa = "DELETE FROM empresa WHERE EmpresaID = '".$id_empresa."'";
+        $borrar = $mysqli->query($empresa);
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../empresa_listado.php">';
+    };
+    //
+    //-- Editar una empresa --
+    //
+    // ** Pase de ID **
+    if ($_POST['procesar'] == 'empresa-editar') {
+        $id_empresa = $_POST['id-empresa'];
+        
+        $empresas = "SELECT * FROM empresa WHERE EmpresaID = '".$id_empresa."' ";
+        $resultado = $mysqli->query($empresas);
+        $empresa = $resultado->fetch_row();
+
+        session_name('empresa-editar');
+        session_start();
+
+        session_unset($_SESSION['empresa_id']);
+        session_unset($_SESSION['empresa_ruc']);
+        session_unset($_SESSION['empresa_nombre']);
+        session_unset($_SESSION['empresa_correo']);
+        session_unset($_SESSION['empresa_direccion']);
+        session_unset($_SESSION['empresa_telefono']);
+
+        $_SESSION['empresa_id'] = $empresa[0];
+        $_SESSION['empresa_ruc'] = $empresa[1];
+        $_SESSION['empresa_nombre'] = $empresa[2];
+        $_SESSION['empresa_correo'] = $empresa[3];
+        $_SESSION['empresa_direccion'] = $empresa[4];
+        $_SESSION['empresa_telefono'] = $empresa[5];
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../empresa_editar.php">';
+    };
+    // ** Cambio de datos **
+    if ($_POST['procesar'] == 'empresa-editar-2') {
+        $empresa_id = $_POST['empresa-id'];
+        $empresa_ruc = $_POST['empresa-ruc'];
+        $empresa_nombre = $_POST['empresa-nombre'];
+        $empresa_correo = $_POST['empresa-correo'];
+        $empresa_direccion = $_POST['empresa-direccion'];
+        $empresa_telefono = $_POST['empresa-telefono'];
+
+        $empresa = "UPDATE empresa SET EmpresaRUC = '".$empresa_ruc."',EmpresaRazSoc = '".$empresa_nombre."',EmpresaCorreo = '".$empresa_correo."',EmpresaDireccion = '".$empresa_direccion."',EmpresaTelefono = '".$empresa_telefono."' WHERE EmpresaID = '".$empresa_id."' ";
+        $editar = $mysqli->query($empresa);
+
+        $mysqli->close();
+        echo '<meta http-equiv="refresh" content="0; url=../empresa_listado.php">';
     };
 
 }

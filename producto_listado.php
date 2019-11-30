@@ -83,12 +83,12 @@
                                     <th class="acciones">
                                         <form action="php/procesar.php" method="POST">
                                             <input type="submit" name="editar-producto" class="button btn-accion" value="Editar">
-                                            <input type="hidden" name="procesar" value="editar-producto">
+                                            <input type="hidden" name="procesar" value="prod-editar">
                                             <input type="hidden" name="id-producto" value="'.$prod[0].'">
                                         </form>
                                         <form action="php/procesar.php" method="POST">
                                             <input type="submit" name="borrar-producto" class="button btn-danger btn-accion" value="Eliminar">
-                                            <input type="hidden" name="procesar" value="borrar-producto">
+                                            <input type="hidden" name="procesar" value="prod-borrar">
                                             <input type="hidden" name="id-producto" value="'.$prod[0].'">
                                         </form>
                                     </th>

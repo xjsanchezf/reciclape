@@ -68,12 +68,12 @@
                                     <th class="flex">
                                         <form action="php/procesar.php" method="POST">
                                             <input type="submit" name="editar-empresa" class="button" value="Editar">
-                                            <input type="hidden" name="procesar" value="editar-empresa">
+                                            <input type="hidden" name="procesar" value="empresa-editar">
                                             <input type="hidden" name="id-empresa" value="'.$empresa[0].'">
                                         </form>
                                         <form action="php/procesar.php" method="POST">
                                             <input type="submit" name="borrar-empresa" class="button btn-danger" value="Eliminar">
-                                            <input type="hidden" name="procesar" value="borrar-empresa">
+                                            <input type="hidden" name="procesar" value="empresa-borrar">
                                             <input type="hidden" name="id-empresa" value="'.$empresa[0].'">
                                         </form>
                                     </th>
