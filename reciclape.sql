@@ -6,7 +6,7 @@ USE reciclape;
 -- Definiendo la tabla `Usuario` 
 -- 
 
-CREATE TABLE `Usuario` (
+CREATE TABLE `usuario` (
 	`UsuarioID` INT NOT NULL AUTO_INCREMENT,
 	`UsuarioCorreo` VARCHAR(100) NOT NULL,
 	`UsuarioPassword` VARCHAR(100) NOT NULL,
@@ -23,7 +23,7 @@ ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 -- Insertando datos a la tabla `Usuario` 
 -- 
 
-INSERT INTO `Usuario` (`UsuarioID`, `UsuarioCorreo`, `UsuarioPassword`, `UsuarioNombres`, `UsuarioApellidos`, `UsuarioDireccion`, `UsuarioTelefono`) VALUES 
+INSERT INTO `usuario` (`UsuarioID`, `UsuarioCorreo`, `UsuarioPassword`, `UsuarioNombres`, `UsuarioApellidos`, `UsuarioDireccion`, `UsuarioTelefono`) VALUES 
 	(1, 'luis.carlos1999h@gmail.com', 'abc123def', 'Luis', 'Huamaní', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 965126613),
     (2, 'jlqs97@gmail.com', 'abc123def', 'Giorgio', 'Emé', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 957212662),
     (3, 'xjsanchezf@gmail.com', 'abc123def', 'Xiomara', 'Sánchez', 'Avenida Javier Prado Oeste 980, Int. 901, Magdalena', 992137315);
@@ -32,28 +32,29 @@ INSERT INTO `Usuario` (`UsuarioID`, `UsuarioCorreo`, `UsuarioPassword`, `Usuario
 -- Definiendo la tabla `Empresa` 
 --  
 
-CREATE TABLE `Empresa` (
-    `EmpresaID` INT NOT NULL AUTO_INCREMENT ,
-    `EmpresaRUC` INT(11) NOT NULL ,
-    `EmpresaRazSoc` VARCHAR(200) NOT NULL ,
-    `EmpresaCorreo` VARCHAR(200) NULL DEFAULT NULL,
-    `EmpresaDireccion` VARCHAR(200) NULL DEFAULT NULL,
-    `EmpresaTelefono` VARCHAR(20) NULL DEFAULT NULL,
+DROP TABLE IF EXISTS empresa;
+CREATE TABLE empresa (
+    EmpresaID INT NOT NULL AUTO_INCREMENT,
+    EmpresaRUC BIGINT(11) NOT NULL,
+    EmpresaRazSoc VARCHAR(200) NOT NULL ,
+    EmpresaCorreo VARCHAR(200) NULL DEFAULT NULL,
+    EmpresaDireccion VARCHAR(200) NOT NULL ,
+    EmpresaTelefono INT(9) NULL DEFAULT NULL,
 
-    PRIMARY KEY (`EmpresaID`)
+    PRIMARY KEY (EmpresaID)
 )
 DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `Empresa` (`EmpresaID`, `EmpresaRUC`, `EmpresaRazSoc`, `EmpresaCorreo`, `EmpresaDireccion`, `EmpresaTelefono`) VALUES 
-    (1, '20601106940', 'Reciclando Perú', 'contacto@reciclandoperu.com', 'Manzana F Lote 20 Grupo 4, Cruz de Motupe, San Juan de Lurigancho', '970713494'),
-    (2, '20601106940', 'Recyclean Perú', 'percy@recycleanperu.com', 'Nevado Yanahuanca S/N Mz. 1 Lt. 6A, Urb. Villa Baja Chorrillos, Chorrillos', '2581586'),
-    (3, '20601106940', 'Recipack', 'informes@recipack.com.pe', 'Mz. M1 Lt. 6-B Coop. Agrop. Las Vertientes, Villa El Salvador', '4178031');
+INSERT INTO empresa (EmpresaID, EmpresaRUC, EmpresaRazSoc, EmpresaCorreo, EmpresaDireccion, EmpresaTelefono) VALUES 
+    (1, 20601106940, 'Reciclando Perú', 'contacto@reciclandoperu.com', 'Manzana F Lote 20 Grupo 4, Cruz de Motupe, San Juan de Lurigancho', 970713494),
+    (2, 20516647281, 'Recyclean Perú', 'percy@recycleanperu.com', 'Nevado Yanahuanca S/N Mz. 1 Lt. 6A, Urb. Villa Baja Chorrillos, Chorrillos', 2581586),
+    (3, 20602129676, 'Recipack', 'informes@recipack.com.pe', 'Mz. M1 Lt. 6-B Coop. Agrop. Las Vertientes, Villa El Salvador', 4178031);
 
 -- 
--- Definiendo la tabla `Categoria` 
+-- Definiendo la tabla Categoria
 -- 
 
-CREATE TABLE `Categoria` (
+CREATE TABLE `categoria` (
 	`CategoriaID` INT NOT NULL AUTO_INCREMENT,
 	`CategoriaNombre` VARCHAR(100) NOT NULL,
 	`CategoriaDesc` VARCHAR(100) NULL DEFAULT NULL,
@@ -66,7 +67,7 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Insertando datos a la tabla `Categoria` 
 -- 
 
-INSERT INTO `Categoria` (`CategoriaID`, `CategoriaNombre`, `CategoriaDesc`) VALUES 
+INSERT INTO `categoria` (`CategoriaID`, `CategoriaNombre`, `CategoriaDesc`) VALUES 
     (1, 'Papel', 'Todo tipo de papeles y sus derivados.'),
     (2, 'Plástico', 'ABC, PVC, etc.'),
     (3, 'Vidrio', 'Cualquier producto hecho a base de vidrio.'),
@@ -81,7 +82,7 @@ INSERT INTO `Categoria` (`CategoriaID`, `CategoriaNombre`, `CategoriaDesc`) VALU
 -- Definiendo la tabla `Producto` 
 -- 
 
-CREATE TABLE `Producto` (
+CREATE TABLE `producto` (
 	`ProductoID` INT NOT NULL AUTO_INCREMENT,
 	`ProductoNombre` VARCHAR(45) NOT NULL,
 	`ProductoDesc` VARCHAR(100) NULL DEFAULT NULL,
@@ -100,14 +101,14 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Insertando datos a la tabla `Producto`
 --
 
-INSERT INTO `Producto` (`ProductoID`, `ProductoNombre`, `ProductoPrecio`, `ProductoCategoria`) VALUES
+INSERT INTO `producto` (`ProductoID`, `ProductoNombre`, `ProductoPrecio`, `ProductoCategoria`) VALUES
 	(1, 'Periódicos', 1.20, 1);
 
 --
 -- Definiendo la tabla `DetallePedido`
 --
  
-CREATE TABLE `DetallePedido` (
+CREATE TABLE `detallepedido` (
  	`DetalleID` INT NOT NULL AUTO_INCREMENT ,
  	`DetalleProducto` INT NOT NULL ,
  	`DetalleCantidad` FLOAT NOT NULL,
@@ -127,7 +128,7 @@ DEFAULT CHARSET=utf8mb4;
 -- Definiendo la tabla `Pedido`
 --
 
-CREATE TABLE `Pedido` (
+CREATE TABLE `pedido` (
     `PedidoID` INT NOT NULL AUTO_INCREMENT ,
     `PedidoDetalle` INT NOT NULL ,
     `PedidoFecha` TIMESTAMP NOT NULL ,
@@ -151,7 +152,7 @@ DEFAULT CHARSET=utf8mb4;
 -- Definiendo la tabla `Admin` 
 -- 
 
-CREATE TABLE `Admin` (
+CREATE TABLE `admin` (
 	`AdminID` INT NOT NULL AUTO_INCREMENT,
 	`AdminNombre` VARCHAR(45) NOT NULL,
 	`AdminPassword` VARCHAR(45) NOT NULL,
@@ -164,7 +165,7 @@ ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 -- Insertando datos a la tabla `Admin` 
 -- 
 
-INSERT INTO `Admin` (`AdminID`, `AdminNombre`, `AdminPassword`) VALUES
+INSERT INTO `admin` (`AdminID`, `AdminNombre`, `AdminPassword`) VALUES
     (1, 'luishuamani', 'abc123def'),
     (2, 'giorgioeme', 'abc123def'),
     (3, 'xiomarasanchez', 'abc123def');

@@ -132,19 +132,19 @@ if (isset($_POST['procesar'])) {
         echo '<meta http-equiv="refresh" content="0; url=../producto_editar.php">';
     };
     // ** Cambio de datos **
-    if ($_POST['procesar'] == 'empresa-editar-2') {
-        $empresa_id = $_POST['empresa-id'];
-        $empresa_ruc = $_POST['empresa-ruc'];
-        $empresa_nombre = $_POST['empresa-nombre'];
-        $empresa_correo = $_POST['empresa-correo'];
-        $empresa_direccion = $_POST['empresa-direccion'];
-        $empresa_telefono = $_POST['empresa-telefono'];
+    if ($_POST['procesar'] == 'prod-editar-2') {
+        $prod_id = $_POST['prod-id'];
+        $prod_nombre = $_POST['prod-nombre'];
+        $prod_desc = $_POST['prod-desc'];
+        $prod_precio = $_POST['prod-precio'];
+        $prod_imagen = $_POST['prod-imagen'];
+        $prod_categ = $_POST['prod-categ'];
 
-        $empresa = "UPDATE empresa SET EmpresaRUC = '".$empresa_ruc."',EmpresaRazSoc = '".$empresa_nombre."',EmpresaCorreo = '".$empresa_correo."',EmpresaDireccion = '".$empresa_direccion."',EmpresaTelefono = '".$empresa_telefono."' WHERE EmpresaID = '".$empresa_id."' ";
-        $editar = $mysqli->query($empresa);
+        $producto = "UPDATE producto SET ProductoNombre = '".$prod_nombre."',ProductoDesc = '".$prod_desc."',ProductoPrecio = '".$prod_precio."',ProductoImagen = '".$prod_imagen."',ProductoCategoria = '".$prod_categ."' WHERE ProductoID = '".$prod_id."' ";
+        $editar = $mysqli->query($producto);
 
         $mysqli->close();
-        echo '<meta http-equiv="refresh" content="0; url=../empresa_listado.php">';
+        echo '<meta http-equiv="refresh" content="0; url=../producto_listado.php">';
     };
 
 
@@ -167,7 +167,7 @@ if (isset($_POST['procesar'])) {
         echo '<meta http-equiv="refresh" content="0; url=../empresa_listado.php">';
     };
     //
-    //-- Borrar una categoría --
+    //-- Borrar una empresa --
     //
     if ($_POST['procesar'] == 'empresa-borrar') {
         $id_empresa = $_POST['id-empresa'];
