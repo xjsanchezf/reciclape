@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reciclape</title>
+    <title>Reciclape - Login</title>
 
     <link href="https://fonts.googleapis.com/css?family=Sarabun:400,500,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/registro-login.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/flexbox.css">
 </head>
 <body>
     <div class="container">
@@ -18,24 +19,29 @@
                         <div class="logo">
                             <img src="img/logo.png" alt="Logo">
                         </div>
-                        <div class="formulario">
-                            <form id="empres" method="POST" action="registro.php">
-                    
-                                <input class="input-text" type="text" maxlength="11" placeholder="Número RUC" name="ruc-reg" required>
-                                <input class="input-text" type="email" placeholder="Email" name="correo-reg" required>
-                                <input class="input-text" type="password" placeholder="Contraseña" name="contrasena-reg" required>
 
-                                <input class="btn-primary" type="submit" value="Crear nueva cuenta">
+                        <!-- Formulario de Inicio de sesión-->
+                        <div class="formulario">
+                            <form id="empres" method="POST" action="php/procesar_usuario.php">
+                    
+                                <input class="input-text" type="email" placeholder="Email" name="login-email" required>
+                                <input class="input-text login" type="password" placeholder="Contraseña" name="login-password" required>
+                        
+                                <a href="#">¿Olvidaste tu contraseña?</a>
+
+                                <input type="hidden" name="procesar-usuario" value="login-usuario">
+                                <input class="button btn-primary" type="submit" value="Iniciar sesión">
 
                             </form>
                         </div>
+
                     </div>
                     <div class="redirect">
                         <div>
-                            <p>¿Tienes una cuenta?</p>
+                            <p>¿No tienes una cuenta?</p>
                         </div>
                         <div>
-                            <a href="index.html">Inicia sesión.</a>
+                            <a href="registro.html">Regístrate. </a>
                         </div>
                     </div>
                 </div>
