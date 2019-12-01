@@ -8,7 +8,7 @@
     <title>Editar empresa | Módulo Admin Recicla.PE</title>
     <link rel="icon" href="img/favicon.ico">
 
-    <!-- CSS Foundation -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/freeform.css">
 
