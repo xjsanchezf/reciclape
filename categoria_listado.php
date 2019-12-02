@@ -9,6 +9,7 @@
     <link rel="icon" href="img/favicon.ico">
 
     <!-- CSS Bootstrap Fluid -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap_fluid.css">
@@ -36,21 +37,21 @@
 <body>
 
     <main class="container-fluid">
-        <div class="row-fluid">
+        <div class="row-fluid pt-3 pl-5">
             <p class="text-title">Categorías</p>
             <p class="text-subtitle">Crea, edita o elimina categorías en Recicla.PE</p>
         </div>
-        <div class="row">
+        <div class="row-fluid pt-4 pl-5">
             <a href="categoria_crear.html" class="button" title="Crear nueva categoría">Crear nueva categoría</a>
         </div>
-        <div class="row">
-            <table class="table table-hover">
+        <div class="row-fluid pt-5 px-4">
+            <table class="table-hover w-100">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Categoría</th>
                         <th scope="col">Descripción</span></th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,7 +71,7 @@
                                             <input type="hidden" name="id-categ" value="'.$categ[0].'">
                                         </form>
                                         <form action="php/procesar.php" method="POST">
-                                            <input type="submit" name="borrar-categ" class="button btn-danger btn-accion" value="Eliminar">
+                                            <button type="submit" value="procesar" class="button btn-danger btn-accion"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                             <input type="hidden" name="procesar" value="categ-borrar">
                                             <input type="hidden" name="id-categ" value="'.$categ[0].'">
                                         </form>

@@ -1,5 +1,6 @@
 <?php
 
+
 if (isset($_POST['procesar'])) {
     $procesar = $_POST['procesar'];
 
@@ -32,10 +33,8 @@ if (isset($_POST['procesar'])) {
 
         session_name('categ-editar');
         session_start();
-
-        session_unset($_SESSION['categ_id']);
-        session_unset($_SESSION['categ_nombre']);
-        session_unset($_SESSION['categ_desc']);
+        session_unset();
+        
 
         $_SESSION['categ_id'] = $categ[0];
         $_SESSION['categ_nombre'] = $categ[1];
@@ -113,13 +112,7 @@ if (isset($_POST['procesar'])) {
 
         session_name('prod-editar');
         session_start();
-
-        session_unset($_SESSION['prod_id']);
-        session_unset($_SESSION['prod_nombre']);
-        session_unset($_SESSION['prod_desc']);      
-        session_unset($_SESSION['prod_precio']);
-        session_unset($_SESSION['prod_imagen']);
-        session_unset($_SESSION['prod_categ']);
+        session_unset();
         
         $_SESSION['prod_id'] = $prod[0];
         $_SESSION['prod_nombre'] = $prod[1];
@@ -191,13 +184,7 @@ if (isset($_POST['procesar'])) {
 
         session_name('empresa-editar');
         session_start();
-
-        session_unset($_SESSION['empresa_id']);
-        session_unset($_SESSION['empresa_ruc']);
-        session_unset($_SESSION['empresa_nombre']);
-        session_unset($_SESSION['empresa_correo']);
-        session_unset($_SESSION['empresa_direccion']);
-        session_unset($_SESSION['empresa_telefono']);
+        session_unset();
 
         $_SESSION['empresa_id'] = $empresa[0];
         $_SESSION['empresa_ruc'] = $empresa[1];

@@ -6,3 +6,33 @@
 .btn-accion {
     width: 10em;
 }
+
+
+table thead th,
+table tbody th {
+    border: 2px solid #ffffff;
+}
+table thead th {
+    background-color: var(--primary-color);
+    color: var(--negative-color);
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    padding: 8px;
+}
+table tbody th {
+    background-color: var(--negative-color);
+    font-weight: 400;
+    padding: 8px;
+}
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+    background-color: rgba(41, 171, 134, 0.10);
+}
+
+table thead th:first-child {
+    width: 5%;
+}
+table thead th:last-child {
+    width: 15%;
+}
