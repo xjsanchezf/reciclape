@@ -44,10 +44,12 @@
                             <h1>Módulo Administrador</h1>
                         </div>
                         <div class="formulario">
-                            <form id="empres" method="POST" action="registro.php">
+                            <form id="empres" method="POST" action="php/procesar.php">
                     
-                                <input class="input-text" type="email" placeholder="Email" name="correo-reg" required>
-                                <input class="input-text" type="password" placeholder="Contraseña" name="contrasena-reg" required>
+                                <input class="input-text" type="email" placeholder="Email" name="admin-email" required>
+                                <input class="input-text" type="password" placeholder="Contraseña" name="admin-password" required>
+
+                                <input type="hidden" name="procesar" value="login">
 
                                 <input class="btn-primary" type="submit" value="Iniciar sesión">
 

@@ -33,7 +33,7 @@ if (isset($_POST['procesar-usuario'])) {
                 $_SESSION['login_telefono'] = $login[6];
 
                 $mysqli->close();
-                echo '<meta http-equiv="refresh" content="0; url=../usuario_perfil.php">';
+                echo '<meta http-equiv="refresh" content="0; url=../usuario_dashboard.php">';
 
                 exit();
             } else {

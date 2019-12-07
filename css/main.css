@@ -95,3 +95,9 @@ input:focus {
     margin: 0;
     color: var(--text-secondary);
 }
+.text-paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    color: var(--text-secondary);
+}

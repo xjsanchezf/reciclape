@@ -102,7 +102,22 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 
 INSERT INTO `producto` (`ProductoID`, `ProductoNombre`, `ProductoPrecio`, `ProductoCategoria`) VALUES
-	(1, 'Periódicos', 1.20, 1);
+	(100, 'Periódicos', 1.20, 1),
+    (101, 'Cartones', 0.20, 1),
+    (102, 'Papel Bond', 0.15, 1),
+    (200, 'Botellas', 0.12, 2),
+    (201, 'Chapitas', 0.22, 2),
+    (300, 'Ventanas rotas', 0.59, 3),
+    (400, 'Cobre', 0.79, 4),
+    (401, 'Bronce', 0.89, 4),
+    (600, 'Pilas', 1.40, 6),
+    (700, 'Focos', 2.02, 7),
+    (800, 'Partes de computadora', 9.90, 8),
+    (801, 'Equipos de sonido', 12.90, 8),
+    (900, 'Ropa', 12.90, 9),
+    (901, 'Calzado', 4.90, 9);
+
+
 
 --
 -- Definiendo la tabla `DetallePedido`
