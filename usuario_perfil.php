@@ -48,8 +48,8 @@
         $login_telefono = $_SESSION['login_telefono'];
     ?>
     
-    <main>
-        <div class="row-fluid">
+    <main class="wrapper">
+        <div class="row">
             <div class="col">
                 <div class="heading">
                     <p class="text-title">Hola, <?php echo $login_nombres?></p>
@@ -57,26 +57,33 @@
                 </div>
             
                 <form action="php/procesar_usuario.php" method="POST" class="form">
-                    <label for="empresa-nombre">Número RUC</label>
-                    <input type="number" name="empresa-ruc" value="<?php echo $empresa_ruc?>" required>
+                    <label for="usuario-nombres">Nombres</label>
+                    <input type="text" name="usuario-nombres" value="<?php echo $login_nombres?>" required>
 
-                    <label for="empresa-nombre">Nombre de la empresa</label>
-                    <input type="text" name="empresa-nombre" value="<?php echo $empresa_nombre?>" required>
+                    <label for="usuario-apellidos">Apellidos</label>
+                    <input type="text" name="usuario-apellidos" value="<?php echo $login_apellidos?>" required>
 
-                    <label for="empresa-correo">Correo electrónico</label>
-                    <input type="email" name="empresa-correo" value="<?php echo $empresa_correo?>" required>
+                    <label for="usuario-correo">Correo electrónico</label>
+                    <input type="email" name="usuario-correo" value="<?php echo $login_correo?>" required>
 
-                    <label for="empresa-direccion">Dirección</label>
-                    <input type="text" name="empresa-direccion" value="<?php echo $empresa_direccion?>" required>
+                    <label for="usuario-password">Contraseña</label>
+                    <input type="password" name="usuario-password" value="<?php echo $login_password?>" required>
+                    
+                    <label for="usuario-telefono">Teléfono</label>
+                    <input type="number" name="usuario-telefono" value="<?php echo $login_telefono?>" required>
 
-                    <label for="empresa-telefono">Teléfono</label>
-                    <input type="number" name="empresa-telefono" value="<?php echo $empresa_telefono?>" required>
+                    <label for="usuario-direccion">Dirección</label>
+                    <input type="text" name="usuario-direccion" value="<?php echo $login_direccion?>" required>
 
-                    <input type="hidden" name="empresa-id" value="<?php echo $empresa_id?>">
+                    <input type="hidden" name="usuario-id" value="<?php echo $login_id?>">
                     <input type="hidden" name="procesar-usuario" value="perfil-editar">
             
-                    <input type="submit" class="button" value="Editar empresa">
+                    <input type="submit" class="button" value="Guardar cambios">
                 </form>
+            </div>
+
+            <div class="col">
+                <div class="img img-perfil"></div>
             </div>
         </div>
     </main>

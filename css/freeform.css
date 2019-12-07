@@ -26,6 +26,9 @@
 .img-empresa {
     background-image: url(../img/img_empresa.jpg);
 }
+.img-perfil {
+    background-image: url(../img/img_perfil.jpg);
+}
 
 .form {
     display: flex;
