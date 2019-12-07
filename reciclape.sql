@@ -93,7 +93,7 @@ CREATE TABLE `producto` (
 	PRIMARY KEY (`ProductoID`),
 
 	KEY `FK_Item_CategoriaID` (`ProductoCategoria`),
-	CONSTRAINT `FK_Item_CategoriaID` FOREIGN KEY (`ProductoCategoria`) REFERENCES `Categoria` (`CategoriaID`)
+	CONSTRAINT `FK_Item_CategoriaID` FOREIGN KEY (`ProductoCategoria`) REFERENCES `Categoria` (`CategoriaID`) ON DELETE CASCADE
 ) 
 ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -116,13 +116,20 @@ CREATE TABLE `detallepedido` (
 	PRIMARY KEY (`DetalleID`),
 
 	KEY `FK_DetallePedido_ProductoID` (`DetalleProducto`),
-	CONSTRAINT `FK_DetallePedido_ProductoID` FOREIGN KEY (`DetalleProducto`) REFERENCES `Producto` (`ProductoID`)
+	CONSTRAINT `FK_DetallePedido_ProductoID` FOREIGN KEY (`DetalleProducto`) REFERENCES `Producto` (`ProductoID`) ON DELETE CASCADE
 )
 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Insertando datos a la tabla `DetallePedido` 
 --
+
+INSERT INTO `detallepedido` (`DetalleID`, `DetalleProducto`, `DetalleCantidad`) VALUES
+	(1, 1, 2.05),
+    (2, 1, 2.05),
+    (3, 1, 2.05),
+    (4, 1, 2.05),
+    (5, 1, 2.05);
 
 --
 -- Definiendo la tabla `Pedido`
@@ -138,15 +145,38 @@ CREATE TABLE `pedido` (
     PRIMARY KEY (`PedidoID`),
 
     KEY `FK_Pedido_DetalleID` (`PedidoDetalle`),
-    CONSTRAINT `FK_Pedido_DetalleID` FOREIGN KEY (`PedidoDetalle`) REFERENCES `DetallePedido` (`DetalleID`),
+    CONSTRAINT `FK_Pedido_DetalleID` FOREIGN KEY (`PedidoDetalle`) REFERENCES `DetallePedido` (`DetalleID`) ON DELETE CASCADE,
 
     KEY `FK_Pedido_UsuarioID` (`PedidoUsuario`),
-    CONSTRAINT `FK_Pedido_UsuarioID` FOREIGN KEY (`PedidoUsuario`) REFERENCES `Usuario` (`UsuarioID`),
+    CONSTRAINT `FK_Pedido_UsuarioID` FOREIGN KEY (`PedidoUsuario`) REFERENCES `Usuario` (`UsuarioID`) ON DELETE CASCADE,
 
     KEY `FK_Pedido_EmpresaID` (`PedidoEmpresa`),
-    CONSTRAINT `FK_Pedido_EmpresaID` FOREIGN KEY (`PedidoEmpresa`) REFERENCES `Empresa` (`EmpresaID`)
+    CONSTRAINT `FK_Pedido_EmpresaID` FOREIGN KEY (`PedidoEmpresa`) REFERENCES `Empresa` (`EmpresaID`) ON DELETE CASCADE
 )
 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Insertando datos a la tabla `pedido` 
+--
+INSERT INTO pedido (PedidoID, PedidoDetalle,PedidoUsuario,PedidoEmpresa) VALUES
+    -- Pedidos para Usuario 1
+    (101, 1, 1, 1),
+    (102, 2, 1, 2),
+    (103, 3, 1, 2),
+    (104, 4, 1, 3),
+    (105, 5, 1, 2),
+    -- Pedidos para Usuario 2
+    (201, 1, 2, 1),
+    (202, 2, 2, 2),
+    (203, 3, 2, 2),
+    (204, 4, 2, 3),
+    (205, 5, 2, 2),
+    -- Pedidos para Usuario 3
+    (301, 1, 3, 2),
+    (302, 2, 3, 3),
+    (303, 3, 3, 1),
+    (304, 4, 3, 2),
+    (305, 5, 3, 1);
 
 -- 
 -- Definiendo la tabla `Admin` 
