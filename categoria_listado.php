@@ -37,14 +37,14 @@
 <body>
 
     <main class="container-fluid">
-        <div class="row-fluid pt-3 pl-5">
+        <div class="row-fluid">
             <p class="text-title">Categorías</p>
             <p class="text-subtitle">Crea, edita o elimina categorías en Recicla.PE</p>
         </div>
-        <div class="row-fluid pt-4 pl-5">
-            <a href="categoria_crear.html" class="button" title="Crear nueva categoría">Crear nueva categoría</a>
+        <div class="row-fluid">
+            <a href="categoria_crear.html" class="button btn-bg" title="Crear nueva categoría">Crear nueva categoría</a>
         </div>
-        <div class="row-fluid pt-5 px-4">
+        <div class="row-fluid">
             <table class="table-hover w-100">
                 <thead>
                     <tr>
@@ -66,12 +66,12 @@
                                     <th>'.$categ[2].'</th>
                                     <th class="acciones">
                                         <form action="php/procesar.php" method="POST">
-                                            <input type="submit" name="editar-categ" class="button btn-accion" value="Editar">
+                                            <button type="submit" value="procesar" class="button btn-accion">Editar <i class="fa fa-pencil" aria-hidden="true"></i></button>
                                             <input type="hidden" name="procesar" value="categ-editar">
                                             <input type="hidden" name="id-categ" value="'.$categ[0].'">
                                         </form>
                                         <form action="php/procesar.php" method="POST">
-                                            <button type="submit" value="procesar" class="button btn-danger btn-accion"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                            <button type="submit" value="procesar" class="button btn-danger btn-accion">Eliminar <i class="fa fa-trash" aria-hidden="true"></i></button>
                                             <input type="hidden" name="procesar" value="categ-borrar">
                                             <input type="hidden" name="id-categ" value="'.$categ[0].'">
                                         </form>

@@ -9,6 +9,7 @@
     <link rel="icon" href="img/favicon.ico">
 
     <!-- CSS Bootstrap Fluid -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap_fluid.css">
@@ -40,12 +41,12 @@
         <p class="text-title">Productos</p>
         <p class="text-subtitle">Crea, edita o elimina productos para reciclar dentro de Recicla.PE</p>
     </div>
-    <div class="row">
-        <a href="producto_crear.php" class="button" title="Crear nuevo producto">Crear nuevo producto</a>
+    <div class="row-fluid">
+        <a href="producto_crear.php" class="button btn-bg" title="Crear nuevo producto">Crear nuevo producto</a>
     </div> 
-    <div class="row">
+    <div class="row-fluid">
         <div class="table">
-            <table class="table table-hover">
+            <table class="table-hover w-100">
                 <thead> 
                     <tr>
                         <th scope="col">ID</th>
@@ -53,7 +54,7 @@
                         <th scope="col">Categoría</span></th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Precio (por kilo)</th>
-                        <th scope="col">Acciones</th>
+                        <th scope="col" class="text-center">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,12 +83,12 @@
                                 <td>'.$prod[4].'</td>
                                     <th class="acciones">
                                         <form action="php/procesar.php" method="POST">
-                                            <input type="submit" name="editar-producto" class="button btn-accion" value="Editar">
+                                            <button type="submit" value="procesar" class="button btn-accion">Editar <i class="fa fa-pencil" aria-hidden="true"></i></button>
                                             <input type="hidden" name="procesar" value="prod-editar">
                                             <input type="hidden" name="id-producto" value="'.$prod[0].'">
                                         </form>
                                         <form action="php/procesar.php" method="POST">
-                                            <input type="submit" name="borrar-producto" class="button btn-danger btn-accion" value="Eliminar">
+                                            <button type="submit" value="procesar" class="button btn-danger btn-accion">Eliminar <i class="fa fa-trash" aria-hidden="true"></i></button>
                                             <input type="hidden" name="procesar" value="prod-borrar">
                                             <input type="hidden" name="id-producto" value="'.$prod[0].'">
                                         </form>

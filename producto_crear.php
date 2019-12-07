@@ -9,6 +9,7 @@
     <link rel="icon" href="img/favicon.ico">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/freeform.css">
 
@@ -74,6 +75,13 @@
             
                     <input type="submit" class="button" value="Crear nuevo producto">
                 </form>
+
+                <div class="go-back">
+                    <a href="producto_listado.php" title="Listado de productos">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i> Volver al listado de productos
+                    </a>
+                </div>
+
             </div>
 
             <div class="col">

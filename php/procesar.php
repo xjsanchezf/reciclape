@@ -35,7 +35,6 @@ if (isset($_POST['procesar'])) {
         session_start();
         session_unset();
         
-
         $_SESSION['categ_id'] = $categ[0];
         $_SESSION['categ_nombre'] = $categ[1];
         $_SESSION['categ_desc'] = $categ[2];
