@@ -56,10 +56,11 @@ if (isset($_POST['procesar-usuario'])) {
     //
     if ($procesar == 'register') {
         $register_name = $_POST['register-name'];
+        $register_number = $_POST['register-number'];
         $register_email = $_POST['register-email'];
         $register_password = $_POST['register-password'];
 
-        $registro = sprintf("INSERT INTO usuario (UsuarioNombres, UsuarioCorreo, UsuarioPassword) VALUES ('%s','%s','%s')", $register_name, $register_email, $register_password);
+        $registro = sprintf("INSERT INTO usuario (UsuarioNombres, UsuarioCorreo, UsuarioPassword, UsuarioTelefono) VALUES ('%s','%s','%s','%d')", $register_name, $register_email, $register_password, $register_number);
         $resultado = $mysqli->query($registro);
 
         $login_email = $register_email;

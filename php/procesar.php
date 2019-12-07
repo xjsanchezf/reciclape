@@ -10,10 +10,10 @@ if (isset($_POST['procesar'])) {
     //-- Iniciar sesión --
     //
     if ($procesar == 'login') {
-        $admin_email = $_POST['admin-email'];
-        $admin_password = $_POST['admin-password'];
+        $login_username = $_POST['admin-username'];
+        $login_password = $_POST['admin-password'];
 
-        $admin = sprintf("SELECT * FROM admin WHERE AdminCorreo = '%s'", $login_email);
+        $admin = sprintf("SELECT * FROM admin WHERE AdminNombre = '%s'", $login_username);
         $resultado = $mysqli->query($admin);
         $login = $resultado->fetch_row();
 
@@ -21,33 +21,19 @@ if (isset($_POST['procesar'])) {
         if ($login <> '') {
             // Verifica que la contraseña sea válida
             if ($login[2] == $login_password) {
-                /*
-                session_name('login');
-                session_start();
-                session_unset();
-
-                $_SESSION['login_id'] = $login[0];
-                $_SESSION['login_correo'] = $login[1];
-                $_SESSION['login_password'] = $login[2];
-                $_SESSION['login_nombres'] = $login[3];
-                $_SESSION['login_apellidos'] = $login[4];
-                $_SESSION['login_direccion'] = $login[5];
-                $_SESSION['login_telefono'] = $login[6];
-                */
-
                 $mysqli->close();
                 echo '<meta http-equiv="refresh" content="0; url=../categoria_listado.php">';
 
                 exit();
             } else {
                 echo '<script>alert("Contraseña inválida.");</script>';
-                echo '<meta http-equiv="refresh" content="0; url=../admin_login.html">';
+                echo '<meta http-equiv="refresh" content="0; url=../login_admin.html">';
 
                 exit();
             }
         } else {
             echo '<script>alert("Correo inválido.");</script>';
-            echo '<meta http-equiv="refresh" content="0; url=../admin_login.html">';
+            echo '<meta http-equiv="refresh" content="0; url=../login_admin.html">';
 
             exit();
         };

@@ -46,8 +46,10 @@
                             <form id="empres" method="POST" action="php/procesar_usuario.php">
                     
                                 <input class="input-text" type="text" placeholder="Nombres" name="register-name" required>
+                                <input class="input-text" type="number" placeholder="Teléfono o celular" name="register-number" required>
                                 <input class="input-text" type="email" placeholder="Email" name="register-email" required>
                                 <input class="input-text" type="password" placeholder="Contraseña" name="register-password" required>
+                                <label for="legal" class="legal"><input type="checkbox" value="register-legal" required> Acepto los <a href="#" tilte="Términos y Condiciones">Términos y Condiciones</a> y la <a href="#" title="Política de privacidad">Política de privacidad</a> de Recicla.PE.</label>
 
                                 <input type="hidden" name="procesar-usuario" value="register">
 
