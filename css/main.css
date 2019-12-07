@@ -43,7 +43,7 @@ input::placeholder {
 input:focus {
     outline: none;
     box-shadow: 0px 3px 15px var(--shadow-color);
-}   
+}
 
 .button,
 .button:visited {
@@ -86,7 +86,7 @@ input:focus {
     font-weight: 600;
     margin: 0;
     color: var(--primary-color);
-    
+    font-family: 'Sarabun', 'Arial', sans-serif;
 }
 .text-subtitle {
     font-size: 24px;
@@ -94,10 +94,12 @@ input:focus {
     line-height: 100%;
     margin: 0;
     color: var(--text-secondary);
+    font-family: 'Sarabun', 'Arial', sans-serif;
 }
 .text-paragraph {
     font-size: 16px;
     font-weight: 400;
     line-height: 100%;
     color: var(--text-secondary);
+    font-family: 'Sarabun', 'Arial', sans-serif;
 }

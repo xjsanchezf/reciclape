@@ -21,11 +21,11 @@ body {
 }
 
 .hijo1 {
-    height: 80%;
+    flex: 1 1 auto;
 }
 
 .hijo2 {
-    height: 20%;
+    flex: 0 1 auto;
 }
 
 main {
@@ -43,11 +43,12 @@ main .container {
     max-width: 400px;
     background: #F5F5F5;
     border-radius: 10px;
+    padding: 33px 24px 28px 24px;
 }
 
 .logo {
-    margin: 0px 56px;
-    margin-top: 33px;
+    margin: 0px 32px;
+    /* margin-top: 33px; */
     margin-bottom: 44px;
 }
 
@@ -57,20 +58,19 @@ main .container {
 }
 
 .formulario {
-    margin: 0px 24px;
-    margin-bottom: 28px;
+    /* margin-bottom: 28px; */
 }
 
-form {
+.formulario form {
     display: flex;
     flex-direction: column;
 }
 
-form .input-text {
+.formulario form .input-text {
     margin-bottom: 16px;
 }
 
-.input-text[type="password"] {
+.formulario .input-text[type="password"] {
     margin-bottom: 24px;
 }
 
@@ -181,3 +181,31 @@ form a:hover {
     color: #29AB87;
     text-align: center;
 }
+
+/* COMPONENTES */
+
+.btn-primary {
+    background: #29AB87;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    padding: 18px 0px;
+    border-radius: 10px;
+}
+
+input {
+    border: 1.2px solid #BDBDBD;
+    border-radius: 10px;
+    letter-spacing: 0.03em;
+    padding: 19px 12px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #29AB87;
+}
+
+input::placeholder { color: #BDBDBD }
