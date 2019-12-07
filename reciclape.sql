@@ -93,7 +93,7 @@ CREATE TABLE `producto` (
 	PRIMARY KEY (`ProductoID`),
 
 	KEY `FK_Item_CategoriaID` (`ProductoCategoria`),
-	CONSTRAINT `FK_Item_CategoriaID` FOREIGN KEY (`ProductoCategoria`) REFERENCES `Categoria` (`CategoriaID`) ON DELETE CASCADE
+	CONSTRAINT `FK_Item_CategoriaID` FOREIGN KEY (`ProductoCategoria`) REFERENCES `categoria` (`CategoriaID`) ON DELETE CASCADE
 ) 
 ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -116,7 +116,7 @@ CREATE TABLE `detallepedido` (
 	PRIMARY KEY (`DetalleID`),
 
 	KEY `FK_DetallePedido_ProductoID` (`DetalleProducto`),
-	CONSTRAINT `FK_DetallePedido_ProductoID` FOREIGN KEY (`DetalleProducto`) REFERENCES `Producto` (`ProductoID`) ON DELETE CASCADE
+	CONSTRAINT `FK_DetallePedido_ProductoID` FOREIGN KEY (`DetalleProducto`) REFERENCES `producto` (`ProductoID`) ON DELETE CASCADE
 )
 DEFAULT CHARSET=utf8mb4;
 
@@ -145,13 +145,13 @@ CREATE TABLE `pedido` (
     PRIMARY KEY (`PedidoID`),
 
     KEY `FK_Pedido_DetalleID` (`PedidoDetalle`),
-    CONSTRAINT `FK_Pedido_DetalleID` FOREIGN KEY (`PedidoDetalle`) REFERENCES `DetallePedido` (`DetalleID`) ON DELETE CASCADE,
+    CONSTRAINT `FK_Pedido_DetalleID` FOREIGN KEY (`PedidoDetalle`) REFERENCES `detallepedido` (`DetalleID`) ON DELETE CASCADE,
 
     KEY `FK_Pedido_UsuarioID` (`PedidoUsuario`),
-    CONSTRAINT `FK_Pedido_UsuarioID` FOREIGN KEY (`PedidoUsuario`) REFERENCES `Usuario` (`UsuarioID`) ON DELETE CASCADE,
+    CONSTRAINT `FK_Pedido_UsuarioID` FOREIGN KEY (`PedidoUsuario`) REFERENCES `usuario` (`UsuarioID`) ON DELETE CASCADE,
 
     KEY `FK_Pedido_EmpresaID` (`PedidoEmpresa`),
-    CONSTRAINT `FK_Pedido_EmpresaID` FOREIGN KEY (`PedidoEmpresa`) REFERENCES `Empresa` (`EmpresaID`) ON DELETE CASCADE
+    CONSTRAINT `FK_Pedido_EmpresaID` FOREIGN KEY (`PedidoEmpresa`) REFERENCES `empresa` (`EmpresaID`) ON DELETE CASCADE
 )
 DEFAULT CHARSET=utf8mb4;
 
