@@ -78,7 +78,7 @@
                     <input type="hidden" name="usuario-id" value="<?php echo $login_id?>">
                     <input type="hidden" name="procesar-usuario" value="perfil-editar">
             
-                    <input type="submit" class="button" value="Guardar cambios">
+                    <input type="submit" class="button btn-bg" value="Guardar cambios">
                 </form>
             </div>
 
